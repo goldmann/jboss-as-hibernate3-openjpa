@@ -1,0 +1,48 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:form>
+        <h:dataTable id="chairs" value="#{bean.chairs}" var="c" cellpadding="5"
+                     cellspacing="0" summary="Chairs in the database">
+
+            <f:facet name="header">
+                <h:outputText value="Chairs in the database"/>
+            </f:facet>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Id"/>
+                </f:facet>
+                <h:outputText value="#{c.id}"></h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Color"/>
+                </f:facet>
+                <h:outputText value="#{c.color}"></h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Price"/>
+                </f:facet>
+                <h:outputText value="#{c.price}">
+                    <f:convertNumber type="currency" currencySymbol="$"/>
+                </h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Remove"></h:outputText>
+                </f:facet>
+                <h:commandButton value="Remove" action="#{bean.removeChair(c.id)}"/>
+            </h:column>
+
+        </h:dataTable>
+    </h:form>
+
+</ui:composition>

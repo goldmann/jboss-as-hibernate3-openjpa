@@ -1,0 +1,19 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <f:view>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Color" for="color"/>
+                <h:inputText id="color" value="#{bean.color}"/>
+                <h:outputLabel value="Price" for="price"/>
+                <h:inputText id="price" value="#{bean.price}"/>
+                <h:commandButton value="Add" action="#{bean.saveChair}" />
+            </h:panelGrid>
+        </h:form>
+    </f:view>
+
+</ui:composition>

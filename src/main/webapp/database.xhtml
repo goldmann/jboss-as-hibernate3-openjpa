@@ -1,0 +1,24 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <title>#{provider} Database</title>
+    </h:head>
+    <h:body>
+        <h2>This page shows the database status using #{provider} provider</h2>
+
+        <p>There are <strong>#{bean.count}</strong> chairs in database</p>
+
+        <ui:include src="table.xhtml">
+            <ui:param name="bean" value="#{bean}"/>
+        </ui:include>
+
+        <ui:include src="add.xhtml">
+            <ui:param name="bean" value="#{bean}"/>
+        </ui:include>
+
+    </h:body>
+</ui:composition>
