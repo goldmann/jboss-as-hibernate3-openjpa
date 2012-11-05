@@ -20,6 +20,8 @@
             <property name="jboss.as.jpa.adapterModule" value="org.jboss.as.jpa.openjpa"/>
             <property name="jboss.as.jpa.adapterClass"
                       value="org.jboss.as.jpa.openjpa.OpenJPAPersistenceProviderAdaptor"/>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+            <property name="openjpa.InitializeEagerly" value="true"/>
             <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
         </properties>
     </persistence-unit>
